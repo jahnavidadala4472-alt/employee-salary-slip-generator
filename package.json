@@ -1,0 +1,35 @@
+{
+  "name": "employee-salary-generator",
+  "version": "1.0.0",
+  "description": "Employee Salary Slip Generator – AI Payroll Assistant full-stack application",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "seed": "node server/seed.js"
+  },
+  "keywords": [
+    "payroll",
+    "salary-slip",
+    "ai-assistant",
+    "mongodb",
+    "express",
+    "pdfkit",
+    "jwt"
+  ],
+  "author": "Payroll Engineering Team",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.3.4",
+    "multer": "^1.4.5-lts.1",
+    "pdfkit": "^0.15.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

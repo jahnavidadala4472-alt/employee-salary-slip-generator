@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Profile & Payroll Settings — PayPulse AI</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-logo">P</div>
+        <div class="brand-info">
+          <span class="brand-title">PayPulse AI</span>
+          <span class="brand-badge">Admin Workspace</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-category">Main Menu</div>
+        <a href="/admin-dashboard.html" class="nav-link">
+          <span>📊</span> Dashboard
+        </a>
+        <a href="/employees.html" class="nav-link">
+          <span>👥</span> Employees
+        </a>
+        <a href="/employee-form.html" class="nav-link">
+          <span>➕</span> Add Employee
+        </a>
+
+        <div class="nav-category">Payroll & Slips</div>
+        <a href="/salary-entry.html" class="nav-link">
+          <span>📝</span> Enter Salary
+        </a>
+        <a href="/salary-history.html" class="nav-link">
+          <span>📑</span> Salary History
+        </a>
+
+        <div class="nav-category">AI Intelligence</div>
+        <a href="/ai-assistant.html" class="nav-link">
+          <span>🤖</span> AI Assistant
+        </a>
+
+        <div class="nav-category">Administration</div>
+        <a href="/company.html" class="nav-link active">
+          <span>🏢</span> Company Settings
+        </a>
+        <a href="/settings.html" class="nav-link">
+          <span>⚙️</span> Account Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-snippet">
+          <div class="user-avatar dynamic-user-avatar">AD</div>
+          <div class="user-details">
+            <div class="user-name dynamic-user-name">Administrator</div>
+            <span class="user-role-badge dynamic-user-role">ADMIN</span>
+          </div>
+          <button class="btn btn-icon btn-secondary logout-btn" title="Sign Out">🚪</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+      <header class="top-navbar">
+        <div class="navbar-left">
+          <button class="toggle-sidebar-btn">☰</button>
+          <div class="page-headline">
+            <h1 class="page-title">Company Profile & Branding</h1>
+            <span class="page-subtitle">Manage organization details stamped onto official salary slips and PDF documents</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="content-body">
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; align-items: flex-start;">
+          
+          <!-- Logo & Brand Preview Box -->
+          <div class="card">
+            <h3 class="card-title" style="margin-bottom: 1rem;">Company Logo</h3>
+            
+            <div style="width: 100%; height: 160px; border: 2px dashed var(--border-color); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; background: var(--bg-subtle); overflow: hidden; position: relative;" id="logo-preview-box">
+              <span id="logo-placeholder" style="color: var(--text-muted); font-size: 0.9rem; text-align: center; padding: 1rem;">
+                🏢 No custom logo uploaded.<br><small style="font-size: 0.75rem;">(Default system brand used)</small>
+              </span>
+              <img id="logo-img" src="" alt="Company Logo" style="display: none; max-height: 120px; object-fit: contain;">
+            </div>
+
+            <form id="logo-upload-form">
+              <div class="form-group">
+                <label class="form-label" for="logoInput" style="font-size: 0.8rem;">Upload Logo (JPEG, PNG, SVG - Max 2MB)</label>
+                <input type="file" id="logoInput" name="logo" class="form-control" accept="image/jpeg,image/png,image/webp,image/svg+xml" required style="font-size: 0.8rem;">
+              </div>
+              <button type="submit" id="upload-logo-btn" class="btn btn-secondary btn-sm" style="width: 100%;">
+                Upload & Update Logo
+              </button>
+            </form>
+          </div>
+
+          <!-- Company Information Form -->
+          <div class="card">
+            <h3 class="card-title" style="margin-bottom: 1.25rem;">Organization & Tax Information</h3>
+
+            <form id="company-form">
+              <div class="form-group">
+                <label class="form-label" for="companyName">Legal Company Name <span class="required">*</span></label>
+                <input type="text" id="companyName" class="form-control" placeholder="e.g. Acme Innovations Inc." required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="address">Registered Office Address</label>
+                <input type="text" id="address" class="form-control" placeholder="e.g. 100 Innovation Blvd, Suite 400, San Francisco, CA 94105">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="phone">Official Phone</label>
+                  <input type="tel" id="phone" class="form-control" placeholder="+1 (555) 019-2834">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="email">Payroll Contact Email</label>
+                  <input type="email" id="email" class="form-control" placeholder="payroll@company.com">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="website">Website URL</label>
+                  <input type="url" id="website" class="form-control" placeholder="https://company.com">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="taxIdentifier">Tax Identifier / EIN / PAN</label>
+                  <input type="text" id="taxIdentifier" class="form-control" placeholder="TAX-EIN-9842103">
+                </div>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end;">
+                <button type="submit" id="save-company-btn" class="btn btn-primary">
+                  Save Company Settings
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="/assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const user = initAuthGuard('admin');
+      if (!user) return;
+
+      const compForm = document.getElementById('company-form');
+      const logoForm = document.getElementById('logo-upload-form');
+      const logoPlaceholder = document.getElementById('logo-placeholder');
+      const logoImg = document.getElementById('logo-img');
+
+      // Load existing company data
+      try {
+        const res = await apiRequest('/company');
+        const comp = res.data || {};
+
+        document.getElementById('companyName').value = comp.companyName || '';
+        document.getElementById('address').value = comp.address || '';
+        document.getElementById('phone').value = comp.phone || '';
+        document.getElementById('email').value = comp.email || '';
+        document.getElementById('website').value = comp.website || '';
+        document.getElementById('taxIdentifier').value = comp.taxIdentifier || '';
+
+        if (comp.logoPath) {
+          logoImg.src = comp.logoPath;
+          logoImg.style.display = 'block';
+          logoPlaceholder.style.display = 'none';
+        }
+      } catch (err) {
+        showToast(`Failed to load company profile: ${err.message}`, 'error');
+      }
+
+      // Save company details
+      compForm?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitBtn = document.getElementById('save-company-btn');
+        const payload = {
+          companyName: document.getElementById('companyName').value.trim(),
+          address: document.getElementById('address').value.trim(),
+          phone: document.getElementById('phone').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          website: document.getElementById('website').value.trim(),
+          taxIdentifier: document.getElementById('taxIdentifier').value.trim()
+        };
+
+        try {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Saving...';
+          await apiRequest('/company', {
+            method: 'PUT',
+            body: JSON.stringify(payload)
+          });
+          showToast('Company profile updated successfully!', 'success');
+        } catch (err) {
+          showToast(err.message || 'Failed to update company.', 'error');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Save Company Settings';
+        }
+      });
+
+      // Upload logo
+      logoForm?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const fileInput = document.getElementById('logoInput');
+        if (!fileInput.files || fileInput.files.length === 0) {
+          showToast('Please select an image file to upload.', 'error');
+          return;
+        }
+
+        const formData = new FormData();
+        formData.append('logo', fileInput.files[0]);
+
+        const uploadBtn = document.getElementById('upload-logo-btn');
+        try {
+          uploadBtn.disabled = true;
+          uploadBtn.textContent = 'Uploading...';
+
+          const res = await apiRequest('/company/logo', {
+            method: 'POST',
+            body: formData
+          });
+
+          if (res.logoPath) {
+            logoImg.src = res.logoPath;
+            logoImg.style.display = 'block';
+            logoPlaceholder.style.display = 'none';
+          }
+          showToast('Company logo updated successfully!', 'success');
+        } catch (err) {
+          showToast(err.message || 'Logo upload failed.', 'error');
+        } finally {
+          uploadBtn.disabled = false;
+          uploadBtn.textContent = 'Upload & Update Logo';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

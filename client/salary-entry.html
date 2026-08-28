@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter Monthly Salary — PayPulse AI Payroll</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-logo">P</div>
+        <div class="brand-info">
+          <span class="brand-title">PayPulse AI</span>
+          <span class="brand-badge">Admin Workspace</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-category">Main Menu</div>
+        <a href="/admin-dashboard.html" class="nav-link">
+          <span>📊</span> Dashboard
+        </a>
+        <a href="/employees.html" class="nav-link">
+          <span>👥</span> Employees
+        </a>
+        <a href="/employee-form.html" class="nav-link">
+          <span>➕</span> Add Employee
+        </a>
+
+        <div class="nav-category">Payroll & Slips</div>
+        <a href="/salary-entry.html" class="nav-link active">
+          <span>📝</span> Enter Salary
+        </a>
+        <a href="/salary-history.html" class="nav-link">
+          <span>📑</span> Salary History
+        </a>
+
+        <div class="nav-category">AI Intelligence</div>
+        <a href="/ai-assistant.html" class="nav-link">
+          <span>🤖</span> AI Assistant
+        </a>
+
+        <div class="nav-category">Administration</div>
+        <a href="/company.html" class="nav-link">
+          <span>🏢</span> Company Settings
+        </a>
+        <a href="/settings.html" class="nav-link">
+          <span>⚙️</span> Account Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-snippet">
+          <div class="user-avatar dynamic-user-avatar">AD</div>
+          <div class="user-details">
+            <div class="user-name dynamic-user-name">Administrator</div>
+            <span class="user-role-badge dynamic-user-role">ADMIN</span>
+          </div>
+          <button class="btn btn-icon btn-secondary logout-btn" title="Sign Out">🚪</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+      <header class="top-navbar">
+        <div class="navbar-left">
+          <button class="toggle-sidebar-btn">☰</button>
+          <div class="page-headline">
+            <h1 class="page-title">Monthly Salary Computation & Slip Entry</h1>
+            <span class="page-subtitle">Input earnings and deductions with real-time reactive calculation and automated anomaly evaluation</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="content-body">
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: flex-start;">
+          
+          <!-- Salary Entry Form -->
+          <div class="card">
+            <form id="salary-form">
+              
+              <!-- Period & Employee -->
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                1. Salary Period & Recipient
+              </h3>
+
+              <div class="form-group">
+                <label class="form-label" for="employeeId">Select Target Employee <span class="required">*</span></label>
+                <select id="employeeId" class="form-control" required>
+                  <option value="">Loading active employee directory...</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="month">Salary Month <span class="required">*</span></label>
+                  <select id="month" class="form-control" required>
+                    <option value="1">January (01)</option>
+                    <option value="2">February (02)</option>
+                    <option value="3">March (03)</option>
+                    <option value="4">April (04)</option>
+                    <option value="5">May (05)</option>
+                    <option value="6">June (06)</option>
+                    <option value="7">July (07)</option>
+                    <option value="8">August (08)</option>
+                    <option value="9">September (09)</option>
+                    <option value="10">October (10)</option>
+                    <option value="11">November (11)</option>
+                    <option value="12">December (12)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="year">Salary Year <span class="required">*</span></label>
+                  <input type="number" id="year" class="form-control" min="2020" max="2035" required>
+                </div>
+              </div>
+
+              <!-- Earnings -->
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-top: 2rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                2. Earnings Breakdown ($)
+              </h3>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="basicSalary">Basic Salary <span class="required">*</span></label>
+                  <input type="number" step="0.01" min="0" id="basicSalary" class="form-control" placeholder="0.00" value="5000" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="hra">House Rent Allowance (HRA)</label>
+                  <input type="number" step="0.01" min="0" id="hra" class="form-control" placeholder="0.00" value="2000">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="allowances">Special / Other Allowances</label>
+                  <input type="number" step="0.01" min="0" id="allowances" class="form-control" placeholder="0.00" value="1000">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="bonus">Performance / Special Bonus</label>
+                  <input type="number" step="0.01" min="0" id="bonus" class="form-control" placeholder="0.00" value="0">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="overtime">Overtime Payout</label>
+                  <input type="number" step="0.01" min="0" id="overtime" class="form-control" placeholder="0.00" value="0">
+                </div>
+              </div>
+
+              <!-- Deductions -->
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--danger); margin-top: 2rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                3. Deductions Breakdown ($)
+              </h3>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="tax">Income Tax (TDS)</label>
+                  <input type="number" step="0.01" min="0" id="tax" class="form-control" placeholder="0.00" value="700">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="pf">Provident Fund (PF)</label>
+                  <input type="number" step="0.01" min="0" id="pf" class="form-control" placeholder="0.00" value="600">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="esi">Employee State Insurance (ESI)</label>
+                  <input type="number" step="0.01" min="0" id="esi" class="form-control" placeholder="0.00" value="150">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="otherDeductions">Other / Voluntary Deductions</label>
+                  <input type="number" step="0.01" min="0" id="otherDeductions" class="form-control" placeholder="0.00" value="0">
+                </div>
+              </div>
+
+              <!-- Remarks -->
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-top: 2rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                4. Remarks / Notes
+              </h3>
+
+              <div class="form-group">
+                <label class="form-label" for="notes">Internal Payroll Notes (Visible on salary slip)</label>
+                <textarea id="notes" class="form-control" rows="2" placeholder="e.g. Regular monthly salary disbursement. Includes performance incentive."></textarea>
+              </div>
+
+              <div style="margin-top: 2rem; display: flex; justify-content: flex-end; gap: 1rem;">
+                <button type="reset" class="btn btn-secondary">Reset Fields</button>
+                <button type="submit" class="btn btn-primary btn-lg">
+                  Generate Salary Slip
+                </button>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- Live Reactive Calculation Card (Sticky) -->
+          <div class="card" style="position: sticky; top: 90px; border-top: 4px solid var(--primary); background: #ffffff;">
+            <h3 class="card-title" style="margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+              <span>⚡</span> Live Calculation Preview
+            </h3>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.9rem;">
+              <div style="display: flex; justify-content: space-between; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color);">
+                <span style="color: var(--text-muted);">Total Gross Earnings:</span>
+                <strong id="live-gross-salary" style="color: var(--text-main);">$0.00</strong>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color);">
+                <span style="color: var(--text-muted);">Total Deductions:</span>
+                <strong id="live-total-deductions" style="color: var(--danger);">$0.00</strong>
+              </div>
+
+              <div style="background: #eff6ff; border: 1px solid var(--border-focus); border-radius: var(--radius-sm); padding: 1rem; text-align: center; margin-top: 0.5rem;">
+                <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary); text-transform: uppercase;">
+                  Estimated Net Take-Home
+                </span>
+                <div id="live-net-salary" style="font-size: 1.8rem; font-weight: 800; color: var(--primary); margin-top: 0.25rem;">
+                  $0.00
+                </div>
+              </div>
+
+              <div style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; margin-top: 0.5rem; background: var(--bg-subtle); padding: 0.75rem; border-radius: var(--radius-sm);">
+                ℹ️ <strong>Authoritative Validation:</strong> Calculation is verified on the backend before slip creation and scanned for anomaly alerts against historical records.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/salary.js"></script>
+</body>
+</html>

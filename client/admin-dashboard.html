@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — PayPulse AI Payroll</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-logo">P</div>
+        <div class="brand-info">
+          <span class="brand-title">PayPulse AI</span>
+          <span class="brand-badge">Admin Workspace</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-category">Main Menu</div>
+        <a href="/admin-dashboard.html" class="nav-link active">
+          <span>📊</span> Dashboard
+        </a>
+        <a href="/employees.html" class="nav-link">
+          <span>👥</span> Employees
+        </a>
+        <a href="/employee-form.html" class="nav-link">
+          <span>➕</span> Add Employee
+        </a>
+
+        <div class="nav-category">Payroll & Slips</div>
+        <a href="/salary-entry.html" class="nav-link">
+          <span>📝</span> Enter Salary
+        </a>
+        <a href="/salary-history.html" class="nav-link">
+          <span>📑</span> Salary History
+        </a>
+
+        <div class="nav-category">AI Intelligence</div>
+        <a href="/ai-assistant.html" class="nav-link">
+          <span>🤖</span> AI Assistant
+        </a>
+
+        <div class="nav-category">Administration</div>
+        <a href="/company.html" class="nav-link">
+          <span>🏢</span> Company Settings
+        </a>
+        <a href="/settings.html" class="nav-link">
+          <span>⚙️</span> Account Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-snippet">
+          <div class="user-avatar dynamic-user-avatar">AD</div>
+          <div class="user-details">
+            <div class="user-name dynamic-user-name">Administrator</div>
+            <span class="user-role-badge dynamic-user-role">ADMIN</span>
+          </div>
+          <button class="btn btn-icon btn-secondary logout-btn" title="Sign Out">🚪</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-wrapper">
+      <header class="top-navbar">
+        <div class="navbar-left">
+          <button class="toggle-sidebar-btn">☰</button>
+          <div class="page-headline">
+            <h1 class="page-title">Executive Payroll Dashboard</h1>
+            <span class="page-subtitle">Real-time overview of monthly payroll, compensation, and AI anomalies</span>
+          </div>
+        </div>
+        <div class="navbar-right">
+          <a href="/salary-entry.html" class="btn btn-primary btn-sm">
+            <span>➕</span> New Salary Slip
+          </a>
+        </div>
+      </header>
+
+      <main class="content-body">
+        <!-- KPI Stat Cards -->
+        <div class="grid-cards">
+          <div class="card stat-card">
+            <div class="stat-icon primary">👥</div>
+            <div class="stat-details">
+              <span class="stat-label">Total Employees</span>
+              <span id="stat-total-emp" class="stat-value">0</span>
+              <span class="stat-trend up">Registered in system</span>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-icon success">🟢</div>
+            <div class="stat-details">
+              <span class="stat-label">Active Employees</span>
+              <span id="stat-active-emp" class="stat-value">0</span>
+              <span class="stat-trend up">Eligible for payroll</span>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-icon secondary">💵</div>
+            <div class="stat-details">
+              <span class="stat-label">Total Gross Salary</span>
+              <span id="stat-gross-salary" class="stat-value">$0.00</span>
+              <span class="stat-trend">All historical payroll</span>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-icon danger">📉</div>
+            <div class="stat-details">
+              <span class="stat-label">Total Deductions</span>
+              <span id="stat-total-deductions" class="stat-value">$0.00</span>
+              <span class="stat-trend down">Tax, PF, ESI & others</span>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-icon primary">💰</div>
+            <div class="stat-details">
+              <span class="stat-label">Total Net Disbursed</span>
+              <span id="stat-net-salary" class="stat-value">$0.00</span>
+              <span class="stat-trend up">Final take-home pay</span>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-icon warning">📑</div>
+            <div class="stat-details">
+              <span class="stat-label">Salary Slips</span>
+              <span id="stat-payroll-count" class="stat-value">0 Slips</span>
+              <span class="stat-trend">Generated & Stored</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions Banner -->
+        <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%);">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-main);">Quick Actions</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Perform common administrative and payroll operations</p>
+            </div>
+            <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+              <a href="/employee-form.html" class="btn btn-secondary btn-sm">➕ Add Employee</a>
+              <a href="/salary-entry.html" class="btn btn-primary btn-sm">📝 Create Salary Slip</a>
+              <a href="/employees.html" class="btn btn-secondary btn-sm">👥 View Employees</a>
+              <a href="/salary-history.html" class="btn btn-secondary btn-sm">📑 Salary History</a>
+              <a href="/ai-assistant.html" class="btn btn-outline-primary btn-sm">🤖 AI Assistant</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Anomaly Detection Feed -->
+        <div class="card" style="margin-bottom: 2rem;">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">🤖 AI Salary Anomaly Warnings & Insights</h3>
+              <p class="card-desc">Automatic heuristic and AI-powered detection of sudden salary spikes, unusual bonuses, or overtime discrepancies</p>
+            </div>
+            <span id="anomaly-count-badge" class="badge badge-warning">Checking alerts...</span>
+          </div>
+          <div id="anomaly-alerts-list">
+            <div style="text-align: center; padding: 2rem; color: var(--text-muted);">
+              Loading AI anomaly signals...
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Salary Slips Table -->
+        <div class="card" style="margin-bottom: 2rem;">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Recent Salary Slips</h3>
+              <p class="card-desc">Latest generated payroll records</p>
+            </div>
+            <a href="/salary-history.html" class="btn btn-secondary btn-sm">View All History →</a>
+          </div>
+
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Slip Number</th>
+                  <th>Employee</th>
+                  <th>Period</th>
+                  <th>Gross Salary</th>
+                  <th>Deductions</th>
+                  <th>Net Salary</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="recent-slips-tbody">
+                <tr><td colspan="7" style="text-align: center; padding: 2rem; color: var(--text-muted);">Loading slips...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Recent Employees Table -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Employee Directory Highlights</h3>
+              <p class="card-desc">Recently registered personnel</p>
+            </div>
+            <a href="/employees.html" class="btn btn-secondary btn-sm">Manage All Employees →</a>
+          </div>
+
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Employee ID</th>
+                  <th>Name</th>
+                  <th>Department</th>
+                  <th>Designation</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="recent-emp-tbody">
+                <tr><td colspan="6" style="text-align: center; padding: 2rem; color: var(--text-muted);">Loading employees...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/dashboard.js"></script>
+</body>
+</html>

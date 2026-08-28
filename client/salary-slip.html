@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Official Salary Slip — PayPulse AI</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar (Hidden during print) -->
+    <aside class="sidebar no-print">
+      <div class="sidebar-header">
+        <div class="brand-logo">P</div>
+        <div class="brand-info">
+          <span class="brand-title">PayPulse AI</span>
+          <span class="brand-badge">Payroll Suite</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-category">Main Menu</div>
+        <a href="/admin-dashboard.html" class="nav-link">
+          <span>📊</span> Dashboard
+        </a>
+        <a href="/salary-history.html" class="nav-link active">
+          <span>📑</span> Salary Slips
+        </a>
+        <a href="/ai-assistant.html" class="nav-link">
+          <span>🤖</span> AI Assistant
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-snippet">
+          <div class="user-avatar dynamic-user-avatar">JD</div>
+          <div class="user-details">
+            <div class="user-name dynamic-user-name">User</div>
+            <span class="user-role-badge dynamic-user-role">STAFF</span>
+          </div>
+          <button class="btn btn-icon btn-secondary logout-btn" title="Sign Out">🚪</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <header class="top-navbar no-print">
+        <div class="navbar-left">
+          <button class="toggle-sidebar-btn">☰</button>
+          <div class="page-headline">
+            <h1 class="page-title">Digital Salary Slip Document</h1>
+            <span class="page-subtitle">Official verified payroll statement with PDF download and AI summary</span>
+          </div>
+        </div>
+        <div class="navbar-right btn-print-actions">
+          <button id="ai-summary-btn" class="btn btn-secondary btn-sm">
+            <span>🤖</span> AI Summary
+          </button>
+          <button id="print-slip-btn" class="btn btn-secondary btn-sm">
+            <span>🖨️</span> Print Slip
+          </button>
+          <a id="download-pdf-btn" href="#" class="btn btn-primary btn-sm">
+            <span>📥</span> Download Vector PDF
+          </a>
+        </div>
+      </header>
+
+      <main class="content-body">
+
+        <!-- AI Summary Collapsible Card -->
+        <div id="ai-summary-box" class="card no-print" style="max-width: 800px; margin: 0 auto 1.5rem; display: none; border-left: 4px solid var(--secondary); background: #faf5ff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--secondary); display: flex; align-items: center; gap: 0.5rem;">
+              <span>🤖</span> AI Salary Breakdown & Comparative Summary
+            </h4>
+            <span class="badge badge-secondary">Gemini AI</span>
+          </div>
+          <div id="ai-summary-content" style="font-size: 0.88rem; color: var(--text-main); line-height: 1.6;">
+            Generating summary...
+          </div>
+        </div>
+
+        <!-- Official Printable Salary Slip Container -->
+        <div class="salary-slip-wrapper">
+          
+          <!-- Company & Title Header -->
+          <div class="slip-header">
+            <div>
+              <div id="company-name-text" class="slip-company-name">NEXUS GLOBAL TECHNOLOGIES INC.</div>
+              <div id="company-address-text" class="slip-company-meta">742 Evergreen Terrace, San Francisco, CA 94105</div>
+              <div id="company-contact-text" class="slip-company-meta">Phone: +1 (415) 555-0199 | Email: payroll@nexusglobal.io</div>
+              <div id="company-tax-text" class="slip-company-meta">Tax ID: TAX-EIN-88392019 | Web: https://nexusglobal.io</div>
+            </div>
+            <div class="slip-title-box">
+              <span class="slip-title-badge">SALARY SLIP / PAYSLIP</span>
+              <div id="slip-period-text" class="slip-period">AUGUST 2026</div>
+              <div style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-muted); margin-top: 0.2rem;">
+                Slip #: <span id="slip-number-badge" style="font-weight: 700; color: var(--primary);">SLIP-202608-1001</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Employee & Slip Metadata Grid -->
+          <div class="slip-meta-grid">
+            <div class="slip-meta-col">
+              <div class="slip-meta-item">
+                <span>Employee ID:</span>
+                <span id="slip-emp-id">EMP001</span>
+              </div>
+              <div class="slip-meta-item">
+                <span>Full Name:</span>
+                <span id="slip-emp-name">John Doe</span>
+              </div>
+              <div class="slip-meta-item">
+                <span>Department:</span>
+                <span id="slip-emp-dept">Engineering</span>
+              </div>
+              <div class="slip-meta-item">
+                <span>Designation:</span>
+                <span id="slip-emp-desig">Senior Full Stack Engineer</span>
+              </div>
+            </div>
+
+            <div class="slip-meta-col">
+              <div class="slip-meta-item">
+                <span>Joining Date:</span>
+                <span id="slip-emp-joining">Jan 15, 2023</span>
+              </div>
+              <div class="slip-meta-item">
+                <span>Bank Name:</span>
+                <span id="slip-emp-bank">Chase Bank</span>
+              </div>
+              <div class="slip-meta-item">
+                <span>Account Number:</span>
+                <span id="slip-emp-acc">•••• 4821</span>
+              </div>
+              <div class="slip-meta-item">
+                <span>Disbursement Date:</span>
+                <span id="slip-gen-date">Aug 28, 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dual Column Earnings & Deductions Tables -->
+          <div class="slip-tables-grid">
+            
+            <!-- Earnings Table Box -->
+            <div class="slip-table-box">
+              <div class="slip-table-title">
+                <span>EARNINGS</span>
+                <span>AMOUNT ($)</span>
+              </div>
+              <div class="slip-table-row">
+                <span>Basic Salary</span>
+                <strong id="slip-basic">$0.00</strong>
+              </div>
+              <div class="slip-table-row">
+                <span>House Rent Allowance (HRA)</span>
+                <strong id="slip-hra">$0.00</strong>
+              </div>
+              <div class="slip-table-row">
+                <span>Special / Other Allowances</span>
+                <strong id="slip-allowances">$0.00</strong>
+              </div>
+              <div class="slip-table-row">
+                <span>Performance Bonus</span>
+                <strong id="slip-bonus">$0.00</strong>
+              </div>
+              <div class="slip-table-row">
+                <span>Overtime Pay</span>
+                <strong id="slip-overtime">$0.00</strong>
+              </div>
+              <div class="slip-table-row total-row" style="color: var(--primary);">
+                <span>TOTAL GROSS EARNINGS</span>
+                <span id="slip-total-gross">$0.00</span>
+              </div>
+            </div>
+
+            <!-- Deductions Table Box -->
+            <div class="slip-table-box">
+              <div class="slip-table-title deductions">
+                <span>DEDUCTIONS</span>
+                <span>AMOUNT ($)</span>
+              </div>
+              <div class="slip-table-row">
+                <span>Income Tax (TDS)</span>
+                <strong id="slip-tax">$0.00</strong>
+              </div>
+              <div class="slip-table-row">
+                <span>Provident Fund (PF)</span>
+                <strong id="slip-pf">$0.00</strong>
+              </div>
+              <div class="slip-table-row">
+                <span>Employee State Insurance (ESI)</span>
+                <strong id="slip-esi">$0.00</strong>
+              </div>
+              <div class="slip-table-row">
+                <span>Other / Voluntary Deductions</span>
+                <strong id="slip-other-deductions">$0.00</strong>
+              </div>
+              <div class="slip-table-row" style="visibility: hidden;">
+                <span>Placeholder</span>
+                <strong>$0.00</strong>
+              </div>
+              <div class="slip-table-row total-row" style="color: var(--danger);">
+                <span>TOTAL DEDUCTIONS</span>
+                <span id="slip-total-deductions">$0.00</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Net Salary Highlight Banner -->
+          <div class="slip-net-banner">
+            <div>
+              <span style="font-size: 0.85rem; font-weight: 700; color: var(--primary); text-transform: uppercase;">
+                NET TAKE-HOME PAYABLE
+              </span>
+              <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.15rem;">
+                Total Gross Earnings minus Total Statutory & Voluntary Deductions
+              </div>
+            </div>
+            <div id="slip-net-salary" class="net-amount-digits">
+              $0.00
+            </div>
+          </div>
+
+          <!-- Amount in Words -->
+          <div class="slip-words-box">
+            <span style="font-weight: 700; color: var(--text-main);">Amount in Words: </span>
+            <span id="slip-amount-words" style="color: var(--primary); font-weight: 600;">Loading...</span>
+          </div>
+
+          <!-- Notes (if any) -->
+          <div id="slip-notes-container" style="display: none; background: #fffbeb; border: 1px solid #fde68a; border-radius: var(--radius-sm); padding: 0.75rem 1rem; margin-bottom: 1.5rem; font-size: 0.82rem;">
+            <strong style="color: #92400e;">Payroll Remarks: </strong>
+            <span id="slip-notes-text" style="color: #78350f;"></span>
+          </div>
+
+          <!-- Signatures Section -->
+          <div class="slip-signatures">
+            <div class="signature-box">
+              <div class="signature-line"></div>
+              <div class="signature-title">Employer / Authorized Signatory</div>
+              <div class="signature-sub">Payroll Operations & HR</div>
+            </div>
+
+            <div class="signature-box">
+              <div class="signature-line"></div>
+              <div class="signature-title">Employee Signature</div>
+              <div class="signature-sub">Acknowledged & Received</div>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 2.5rem; font-size: 0.72rem; color: var(--text-light);">
+            This is an electronically generated salary statement. Digital verification hash authenticated by PayPulse AI Payroll.
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/salary-slip.js"></script>
+</body>
+</html>

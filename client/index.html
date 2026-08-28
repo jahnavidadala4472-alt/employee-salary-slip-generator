@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PayPulse AI — AI-Powered Employee Salary Slip Generator & Payroll Assistant</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .landing-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 4rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .landing-hero {
+      padding: 5rem 2rem;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 0.4rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border-focus);
+    }
+    .hero-title {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+      color: var(--text-main);
+    }
+    .gradient-text {
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+    .hero-cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+    .section-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .step-card {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      position: relative;
+    }
+    .step-num {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: var(--primary-gradient);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+      margin-bottom: 1.25rem;
+    }
+    .landing-footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 4rem 2rem 2rem;
+      border-top: 1px solid #1e293b;
+    }
+    @media (max-width: 768px) {
+      .landing-header { padding: 1rem; }
+      .hero-title { font-size: 2.2rem; }
+      .hero-cta-group { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="landing-header">
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+      <div class="brand-logo">P</div>
+      <div class="brand-info">
+        <span class="brand-title">PayPulse AI</span>
+        <span class="brand-badge">Payroll Suite</span>
+      </div>
+    </div>
+    <div style="display: flex; gap: 1rem; align-items: center;">
+      <a href="/login.html" class="btn btn-secondary btn-sm">Sign In</a>
+      <a href="/register.html" class="btn btn-primary btn-sm">Get Started</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="landing-hero">
+    <div class="hero-badge">✨ Next-Gen Payroll Management with AI Anomaly Detection</div>
+    <h1 class="hero-title">
+      Smarter Payroll & <span class="gradient-text">Instant Salary Slips</span> Driven by AI
+    </h1>
+    <p class="hero-subtitle">
+      Automate salary calculations, generate pixel-perfect A4 PDF salary slips, empower employees with an AI Salary Assistant, and catch payroll anomalies before disbursement.
+    </p>
+    <div class="hero-cta-group">
+      <a href="/login.html" class="btn btn-primary btn-lg">Explore Demo Dashboard →</a>
+      <a href="#features" class="btn btn-secondary btn-lg">See Features</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="section-container">
+    <div class="section-header">
+      <h2 class="section-title">Built for Modern HR & Finance Teams</h2>
+      <p class="section-desc">Everything you need to manage compensation, statutory compliance, and employee transparency.</p>
+    </div>
+
+    <div class="grid-cards" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+      <div class="card">
+        <div class="stat-icon primary" style="margin-bottom: 1rem;">⚡</div>
+        <h3 class="card-title">Live & Authoritative Math</h3>
+        <p class="card-desc" style="margin-top: 0.5rem; line-height: 1.6;">
+          Real-time reactive breakdown of Basic, HRA, Allowances, Overtime, Tax, PF, and ESI with authoritative backend recalculation.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="stat-icon secondary" style="margin-bottom: 1rem;">🤖</div>
+        <h3 class="card-title">AI Salary Assistant</h3>
+        <p class="card-desc" style="margin-top: 0.5rem; line-height: 1.6;">
+          Employees can ask natural questions about their take-home pay, HRA exemptions, and month-over-month salary shifts.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="stat-icon danger" style="margin-bottom: 1rem;">🚨</div>
+        <h3 class="card-title">AI Anomaly Detection</h3>
+        <p class="card-desc" style="margin-top: 0.5rem; line-height: 1.6;">
+          Automatically flags unusual spikes, abnormal bonuses, and calculation errors with clear severity ratings and recommendations.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="stat-icon success" style="margin-bottom: 1rem;">📄</div>
+        <h3 class="card-title">Vector PDF Generation</h3>
+        <p class="card-desc" style="margin-top: 0.5rem; line-height: 1.6;">
+          High-resolution A4 printable salary slips generated directly on Node.js using PDFKit with digital signature blocks.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="stat-icon primary" style="margin-bottom: 1rem;">🔒</div>
+        <h3 class="card-title">Role-Based Security</h3>
+        <p class="card-desc" style="margin-top: 0.5rem; line-height: 1.6;">
+          Strict server-enforced data ownership. Employees can never tamper with URL parameters to inspect another peer's financial record.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="stat-icon warning" style="margin-bottom: 1rem;">🏢</div>
+        <h3 class="card-title">Company & Branding</h3>
+        <p class="card-desc" style="margin-top: 0.5rem; line-height: 1.6;">
+          Customizable company metadata, logo uploads with traversal protection, and automated Tax/EIN documentation stamping.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="section-container" style="background: var(--bg-subtle); border-radius: var(--radius-lg);">
+    <div class="section-header">
+      <h2 class="section-title">How It Works in 3 Simple Steps</h2>
+      <p class="section-desc">Streamline your entire monthly payroll cycle effortlessly.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem;">Add Employees</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Register team members with their department, designation, and masked payment details.
+        </p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem;">Enter Monthly Data</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Input earnings and deductions. The live calculator computes Gross, Deductions, and Net salary instantly.
+        </p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem;">Generate & Distribute</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          Review AI anomaly alerts, generate branded PDF salary slips, and grant employee portal access.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="landing-footer">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+      <div>
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+          <div class="brand-logo">P</div>
+          <span style="font-size: 1.2rem; font-weight: 700; color: white;">PayPulse AI</span>
+        </div>
+        <p style="font-size: 0.85rem; max-width: 320px;">
+          Enterprise-grade employee salary slip generation and intelligent payroll management platform.
+        </p>
+      </div>
+      <div style="display: flex; gap: 3rem;">
+        <div>
+          <h5 style="color: white; font-size: 0.9rem; margin-bottom: 0.75rem;">Platform</h5>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+            <li><a href="/login.html" style="color: #94a3b8;">Admin Portal</a></li>
+            <li><a href="/login.html" style="color: #94a3b8;">Employee Portal</a></li>
+            <li><a href="/ai-assistant.html" style="color: #94a3b8;">AI Assistant</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color: white; font-size: 0.9rem; margin-bottom: 0.75rem;">Technology</h5>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem; color: #94a3b8;">
+            <li>Node.js & Express</li>
+            <li>MongoDB & Mongoose</li>
+            <li>PDFKit Vector Engine</li>
+            <li>Google Gemini AI API</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 3rem; font-size: 0.8rem; border-top: 1px solid #1e293b; padding-top: 1.5rem;">
+      © 2026 PayPulse AI Payroll Systems. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>

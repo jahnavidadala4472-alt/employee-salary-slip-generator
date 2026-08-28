@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account & System Settings — PayPulse AI</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-logo">P</div>
+        <div class="brand-info">
+          <span class="brand-title">PayPulse AI</span>
+          <span class="brand-badge">Settings</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-category">Main Menu</div>
+        <a href="/admin-dashboard.html" class="nav-link" id="nav-dashboard-link">
+          <span>📊</span> Dashboard
+        </a>
+        <a href="/salary-history.html" class="nav-link">
+          <span>📑</span> Salary History
+        </a>
+        <a href="/ai-assistant.html" class="nav-link">
+          <span>🤖</span> AI Assistant
+        </a>
+        <a href="/settings.html" class="nav-link active">
+          <span>⚙️</span> Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-snippet">
+          <div class="user-avatar dynamic-user-avatar">US</div>
+          <div class="user-details">
+            <div class="user-name dynamic-user-name">User</div>
+            <span class="user-role-badge dynamic-user-role">STAFF</span>
+          </div>
+          <button class="btn btn-icon btn-secondary logout-btn" title="Sign Out">🚪</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+      <header class="top-navbar">
+        <div class="navbar-left">
+          <button class="toggle-sidebar-btn">☰</button>
+          <div class="page-headline">
+            <h1 class="page-title">Account & System Configuration</h1>
+            <span class="page-subtitle">View profile details and AI Engine diagnostic health</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="content-body">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: flex-start;">
+          
+          <!-- User Profile Box -->
+          <div class="card">
+            <h3 class="card-title" style="margin-bottom: 1.25rem;">My Profile Credentials</h3>
+            
+            <div style="display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border-color);">
+              <div class="user-avatar dynamic-user-avatar" style="width: 60px; height: 60px; font-size: 1.4rem;">US</div>
+              <div>
+                <h4 class="dynamic-user-name" style="font-size: 1.2rem; font-weight: 700;">User Name</h4>
+                <div style="display: flex; gap: 0.5rem; margin-top: 0.25rem;">
+                  <span class="user-role-badge dynamic-user-role">ROLE</span>
+                  <span id="user-email-text" style="font-size: 0.85rem; color: var(--text-muted);">user@company.com</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="font-size: 0.88rem; display: flex; flex-direction: column; gap: 0.75rem;">
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-muted);">Assigned Employee ID:</span>
+                <strong id="user-emp-id-text" style="font-family: var(--font-mono); color: var(--primary);">N/A</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-muted);">Department:</span>
+                <strong id="user-dept-text">N/A</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-muted);">Designation:</span>
+                <strong id="user-desig-text">N/A</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-muted);">Account Status:</span>
+                <span class="badge badge-success">ACTIVE</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color);">
+              <button class="btn btn-secondary logout-btn" style="width: 100%;">
+                🚪 Sign Out of Account
+              </button>
+            </div>
+          </div>
+
+          <!-- AI & System Diagnostics -->
+          <div class="card">
+            <h3 class="card-title" style="margin-bottom: 1.25rem;">System & AI Engine Diagnostics</h3>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.9rem;">
+              <div style="padding: 1rem; background: var(--bg-subtle); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong>REST API Server</strong>
+                  <span class="badge badge-success">ONLINE (Port 5000)</span>
+                </div>
+                <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.35rem;">
+                  Node.js / Express.js REST API with authoritative monetary recalculation.
+                </p>
+              </div>
+
+              <div style="padding: 1rem; background: var(--bg-subtle); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong>Database Engine</strong>
+                  <span class="badge badge-success">MongoDB Mongoose</span>
+                </div>
+                <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.35rem;">
+                  Indexed collections for Users, Employees, Company, SalarySlips, AILogs, and AIAnomalies.
+                </p>
+              </div>
+
+              <div style="padding: 1rem; background: var(--bg-subtle); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong>AI Salary Intelligence</strong>
+                  <span id="ai-engine-badge" class="badge badge-primary">Checking status...</span>
+                </div>
+                <p id="ai-engine-desc" style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.35rem;">
+                  Google Gemini AI integration on backend with fallback rule engine.
+                </p>
+              </div>
+
+              <div style="padding: 1rem; background: var(--bg-subtle); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong>PDF Generation Service</strong>
+                  <span class="badge badge-success">PDFKit Vector Engine</span>
+                </div>
+                <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.35rem;">
+                  Generates vector A4 payslips directly streamed to browser response.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="/assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const user = initAuthGuard();
+      if (!user) return;
+
+      const dashLink = document.getElementById('nav-dashboard-link');
+      if (dashLink) {
+        dashLink.href = user.role === 'admin' ? '/admin-dashboard.html' : '/employee-dashboard.html';
+      }
+
+      document.getElementById('user-email-text').textContent = user.email || '';
+      document.getElementById('user-emp-id-text').textContent = user.employeeId || 'N/A';
+      document.getElementById('user-dept-text').textContent = user.department || 'Administration';
+      document.getElementById('user-desig-text').textContent = user.designation || 'Administrator';
+
+      // Test AI Status
+      try {
+        const res = await apiRequest('/ai/chat', {
+          method: 'POST',
+          body: JSON.stringify({ prompt: 'status check' })
+        });
+        const badge = document.getElementById('ai-engine-badge');
+        const desc = document.getElementById('ai-engine-desc');
+        if (res.isConfigured) {
+          badge.textContent = 'Google Gemini 1.5 Active';
+          badge.className = 'badge badge-success';
+          desc.textContent = 'Live Google Gemini AI API key connected securely on backend.';
+        } else {
+          badge.textContent = 'Local Knowledge Base';
+          badge.className = 'badge badge-primary';
+          desc.textContent = 'Built-in payroll knowledge engine active. To connect live Gemini API, add AI_API_KEY in .env.';
+        }
+      } catch (e) {}
+    });
+  </script>
+</body>
+</html>

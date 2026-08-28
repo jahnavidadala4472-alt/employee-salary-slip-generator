@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Employee — PayPulse AI</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .auth-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.08), transparent 40%),
+                  radial-gradient(circle at bottom left, rgba(37, 99, 235, 0.08), transparent 40%),
+                  var(--bg-app);
+      padding: 2rem;
+    }
+    .auth-card {
+      width: 100%;
+      max-width: 520px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      padding: 2.5rem;
+    }
+  </style>
+</head>
+<body class="auth-page">
+
+  <div class="auth-card">
+    <div style="text-align: center; margin-bottom: 1.75rem;">
+      <a href="/index.html" style="display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+        <div class="brand-logo" style="width: 42px; height: 42px; font-size: 1.4rem;">P</div>
+      </a>
+      <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main);">Create Employee Account</h2>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Set up your payroll credentials</p>
+    </div>
+
+    <form id="register-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="fullName">Full Name <span class="required">*</span></label>
+          <input type="text" id="fullName" class="form-control" placeholder="e.g. Alex Morgan" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="employeeId">Employee ID</label>
+          <input type="text" id="employeeId" class="form-control" placeholder="EMP009 (Auto if empty)">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="email">Work Email <span class="required">*</span></label>
+          <input type="email" id="email" class="form-control" placeholder="alex@company.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="phone">Phone Number</label>
+          <input type="tel" id="phone" class="form-control" placeholder="+1 (555) 000-0000">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="department">Department</label>
+          <select id="department" class="form-control">
+            <option value="Engineering">Engineering</option>
+            <option value="Product & Design">Product & Design</option>
+            <option value="Finance & Accounting">Finance & Accounting</option>
+            <option value="Marketing & Sales">Marketing & Sales</option>
+            <option value="Human Resources">Human Resources</option>
+            <option value="Operations">Operations</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="designation">Designation</label>
+          <input type="text" id="designation" class="form-control" placeholder="e.g. Software Engineer" value="Software Engineer">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="password">Password <span class="required">*</span></label>
+          <div class="input-icon-wrapper">
+            <input type="password" id="password" class="form-control" placeholder="Min 6 characters" required>
+            <button type="button" class="input-action toggle-password" title="Show/Hide">👁️</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="confirmPassword">Confirm Password <span class="required">*</span></label>
+          <div class="input-icon-wrapper">
+            <input type="password" id="confirmPassword" class="form-control" placeholder="Re-type password" required>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.85rem; margin-top: 0.5rem;">
+        Create Employee Account
+      </button>
+    </form>
+
+    <div style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">
+      Already registered? <a href="/login.html" style="font-weight: 600;">Sign In here</a>
+    </div>
+  </div>
+
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/auth.js"></script>
+</body>
+</html>

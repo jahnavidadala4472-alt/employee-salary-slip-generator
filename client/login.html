@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In — PayPulse AI Payroll</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .auth-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.08), transparent 40%),
+                  radial-gradient(circle at bottom left, rgba(37, 99, 235, 0.08), transparent 40%),
+                  var(--bg-app);
+      padding: 2rem;
+    }
+    .auth-card {
+      width: 100%;
+      max-width: 440px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      padding: 2.5rem;
+    }
+    .demo-accounts-box {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: var(--bg-subtle);
+      border: 1px dashed var(--border-color);
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+    }
+    .demo-btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body class="auth-page">
+
+  <div class="auth-card">
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <a href="/index.html" style="display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+        <div class="brand-logo" style="width: 42px; height: 42px; font-size: 1.4rem;">P</div>
+      </a>
+      <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main);">Welcome Back</h2>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Sign in to access your payroll workspace</p>
+    </div>
+
+    <form id="login-form">
+      <div class="form-group">
+        <label class="form-label" for="email">Work Email Address</label>
+        <div class="input-icon-wrapper">
+          <span class="input-icon">✉️</span>
+          <input type="email" id="email" class="form-control" placeholder="name@company.com" required autocomplete="email">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="password">Password</label>
+        <div class="input-icon-wrapper">
+          <span class="input-icon">🔒</span>
+          <input type="password" id="password" class="form-control" placeholder="••••••••" required autocomplete="current-password">
+          <button type="button" class="input-action toggle-password" title="Show/Hide Password">👁️</button>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: 0.85rem;">
+        <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); cursor: pointer;">
+          <input type="checkbox" id="remember" checked> Remember me
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.85rem;">
+        Sign In to Dashboard
+      </button>
+    </form>
+
+    <!-- Quick 1-Click Demo Logins -->
+    <div class="demo-accounts-box">
+      <div style="font-weight: 700; color: var(--text-main); margin-bottom: 0.25rem;">⚡ Quick 1-Click Demo Accounts:</div>
+      <div class="demo-btn-group">
+        <button type="button" onclick="fillDemoCredentials('admin')" class="btn btn-sm btn-secondary" style="font-size: 0.75rem;">👑 Admin</button>
+        <button type="button" onclick="fillDemoCredentials('employee1')" class="btn btn-sm btn-secondary" style="font-size: 0.75rem;">👤 John Doe (EMP001)</button>
+        <button type="button" onclick="fillDemoCredentials('employee2')" class="btn btn-sm btn-secondary" style="font-size: 0.75rem;">👤 Sarah J. (EMP002)</button>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">
+      Don't have an account? <a href="/register.html" style="font-weight: 600;">Register Employee</a>
+    </div>
+  </div>
+
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/auth.js"></script>
+</body>
+</html>

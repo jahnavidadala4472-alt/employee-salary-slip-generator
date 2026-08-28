@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Registration Form — PayPulse AI</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-logo">P</div>
+        <div class="brand-info">
+          <span class="brand-title">PayPulse AI</span>
+          <span class="brand-badge">Admin Workspace</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-category">Main Menu</div>
+        <a href="/admin-dashboard.html" class="nav-link">
+          <span>📊</span> Dashboard
+        </a>
+        <a href="/employees.html" class="nav-link">
+          <span>👥</span> Employees
+        </a>
+        <a href="/employee-form.html" class="nav-link active">
+          <span>➕</span> Add Employee
+        </a>
+
+        <div class="nav-category">Payroll & Slips</div>
+        <a href="/salary-entry.html" class="nav-link">
+          <span>📝</span> Enter Salary
+        </a>
+        <a href="/salary-history.html" class="nav-link">
+          <span>📑</span> Salary History
+        </a>
+
+        <div class="nav-category">AI Intelligence</div>
+        <a href="/ai-assistant.html" class="nav-link">
+          <span>🤖</span> AI Assistant
+        </a>
+
+        <div class="nav-category">Administration</div>
+        <a href="/company.html" class="nav-link">
+          <span>🏢</span> Company Settings
+        </a>
+        <a href="/settings.html" class="nav-link">
+          <span>⚙️</span> Account Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-snippet">
+          <div class="user-avatar dynamic-user-avatar">AD</div>
+          <div class="user-details">
+            <div class="user-name dynamic-user-name">Administrator</div>
+            <span class="user-role-badge dynamic-user-role">ADMIN</span>
+          </div>
+          <button class="btn btn-icon btn-secondary logout-btn" title="Sign Out">🚪</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+      <header class="top-navbar">
+        <div class="navbar-left">
+          <button class="toggle-sidebar-btn">☰</button>
+          <div class="page-headline">
+            <h1 id="form-page-title" class="page-title">Add New Employee</h1>
+            <span class="page-subtitle">Register employee personal profile, department position, and verified banking metadata</span>
+          </div>
+        </div>
+        <div class="navbar-right">
+          <a href="/employees.html" class="btn btn-secondary btn-sm">← Back to Directory</a>
+        </div>
+      </header>
+
+      <main class="content-body">
+        <div class="card" style="max-width: 860px; margin: 0 auto;">
+          <form id="employee-form">
+            
+            <!-- Section 1: Personal Information -->
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+              1. Personal Information
+            </h3>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="fullName">Full Legal Name <span class="required">*</span></label>
+                <input type="text" id="fullName" class="form-control" placeholder="e.g. Eleanor Vance" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="employeeId">Employee ID <span class="required">*</span></label>
+                <input type="text" id="employeeId" class="form-control" placeholder="e.g. EMP004" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="email">Work Email Address <span class="required">*</span></label>
+                <input type="email" id="email" class="form-control" placeholder="eleanor.vance@company.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" class="form-control" placeholder="+1 (555) 345-6789" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="address">Residential Address</label>
+              <input type="text" id="address" class="form-control" placeholder="Street Address, City, State, ZIP">
+            </div>
+
+            <!-- Section 2: Employment Details -->
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-top: 2rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+              2. Employment Information
+            </h3>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="department">Department <span class="required">*</span></label>
+                <input type="text" id="department" class="form-control" placeholder="e.g. Engineering, Marketing, Finance" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="designation">Designation / Role Title <span class="required">*</span></label>
+                <input type="text" id="designation" class="form-control" placeholder="e.g. Senior Frontend Architect" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="joiningDate">Official Date of Joining <span class="required">*</span></label>
+                <input type="date" id="joiningDate" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="status">Employment Status</label>
+                <select id="status" class="form-control">
+                  <option value="active">Active (Eligible for Payroll)</option>
+                  <option value="inactive">Inactive / On Leave</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Section 3: Safe Payment Information -->
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-top: 2rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+              3. Payment Disbursement Info (Masked / Safe Storage)
+            </h3>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="bankName">Bank Name</label>
+                <input type="text" id="bankName" class="form-control" placeholder="e.g. JPMorgan Chase Bank">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="accountLast4">Account Number (Last 4 Digits Only)</label>
+                <input type="text" id="accountLast4" class="form-control" maxlength="4" placeholder="4821">
+              </div>
+            </div>
+
+            <!-- Section 4: Initial Login Password -->
+            <div id="password-group-box">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-top: 2rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                4. Employee Portal Account
+              </h3>
+              <div class="form-group">
+                <label class="form-label" for="password">Initial Password (Defaults to Employee@12345 if left blank)</label>
+                <input type="password" id="password" class="form-control" placeholder="Employee@12345">
+              </div>
+            </div>
+
+            <div style="margin-top: 2.5rem; display: flex; justify-content: flex-end; gap: 1rem;">
+              <a href="/employees.html" class="btn btn-secondary">Cancel</a>
+              <button type="submit" id="form-submit-btn" class="btn btn-primary btn-lg">
+                Register Employee
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/employees.js"></script>
+</body>
+</html>

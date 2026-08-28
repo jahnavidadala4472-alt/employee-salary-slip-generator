@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Salary Assistant — PayPulse AI Payroll</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-logo">P</div>
+        <div class="brand-info">
+          <span class="brand-title">PayPulse AI</span>
+          <span class="brand-badge">AI Assistant</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-category">Main Menu</div>
+        <a href="/admin-dashboard.html" class="nav-link" id="nav-dashboard-link">
+          <span>📊</span> Dashboard
+        </a>
+        <a href="/salary-history.html" class="nav-link">
+          <span>📑</span> Salary History
+        </a>
+        <a href="/ai-assistant.html" class="nav-link active">
+          <span>🤖</span> AI Assistant
+        </a>
+        <a href="/settings.html" class="nav-link">
+          <span>⚙️</span> Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-snippet">
+          <div class="user-avatar dynamic-user-avatar">AI</div>
+          <div class="user-details">
+            <div class="user-name dynamic-user-name">User</div>
+            <span class="user-role-badge dynamic-user-role">MEMBER</span>
+          </div>
+          <button class="btn btn-icon btn-secondary logout-btn" title="Sign Out">🚪</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+      <header class="top-navbar">
+        <div class="navbar-left">
+          <button class="toggle-sidebar-btn">☰</button>
+          <div class="page-headline">
+            <h1 class="page-title">AI Payroll & Compensation Assistant</h1>
+            <span class="page-subtitle">Ask questions about earnings, tax deductions, HRA exemptions, and month-over-month variances</span>
+          </div>
+        </div>
+        <div class="navbar-right">
+          <span id="ai-status-indicator" class="badge badge-primary">AI Ready</span>
+        </div>
+      </header>
+
+      <main class="content-body">
+        <div class="ai-chat-card">
+          
+          <!-- Chat Header -->
+          <div class="ai-chat-header">
+            <div class="ai-chat-brand">
+              <span class="ai-sparkle-icon">✨</span>
+              <div>
+                <h3 style="font-size: 1.05rem; font-weight: 700;">PayPulse AI Assistant</h3>
+                <p style="font-size: 0.75rem; opacity: 0.9;">Trained on payroll terminology, statutory deductions & financial statements</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+              <select id="ai-emp-select" class="form-control" style="display: none; font-size: 0.8rem; padding: 0.35rem 0.65rem; background: rgba(255,255,255,0.9); color: var(--text-main);">
+                <option value="">-- General Context --</option>
+              </select>
+              <button id="clear-chat-btn" class="btn btn-sm btn-secondary" style="font-size: 0.75rem; background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3);">
+                Clear Chat
+              </button>
+            </div>
+          </div>
+
+          <!-- Chat Messages Container -->
+          <div id="chat-messages" class="ai-chat-messages"></div>
+
+          <!-- Suggested Prompt Pills -->
+          <div class="ai-prompt-chips">
+            <button type="button" class="prompt-chip" data-prompt="Explain my net salary.">💰 Explain my net salary</button>
+            <button type="button" class="prompt-chip" data-prompt="What is my gross salary?">💵 What is my gross salary?</button>
+            <button type="button" class="prompt-chip" data-prompt="Explain my deductions.">📉 Explain my deductions</button>
+            <button type="button" class="prompt-chip" data-prompt="Summarize my salary slip.">📑 Summarize my salary slip</button>
+            <button type="button" class="prompt-chip" data-prompt="Why is my salary different from last month?">📊 Compare with last month</button>
+            <button type="button" class="prompt-chip" data-prompt="Explain HRA.">🏠 Explain HRA</button>
+            <button type="button" class="prompt-chip" data-prompt="Explain PF.">🏦 Explain PF</button>
+            <button type="button" class="prompt-chip" data-prompt="Explain ESI.">🏥 Explain ESI</button>
+            <button type="button" class="prompt-chip" data-prompt="Explain tax deduction.">🧾 Explain tax deduction</button>
+          </div>
+
+          <!-- User Input Box -->
+          <form id="chat-form" class="ai-chat-input-area">
+            <input type="text" id="chat-input" class="form-control" placeholder="Ask a question about your payroll, compensation, or tax rules..." required autocomplete="off">
+            <button type="submit" class="btn btn-primary" style="padding: 0 1.5rem;">
+              Send ✈️
+            </button>
+          </form>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/ai.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = getUser();
+      const dashLink = document.getElementById('nav-dashboard-link');
+      if (user && dashLink) {
+        dashLink.href = user.role === 'admin' ? '/admin-dashboard.html' : '/employee-dashboard.html';
+      }
+    });
+  </script>
+</body>
+</html>

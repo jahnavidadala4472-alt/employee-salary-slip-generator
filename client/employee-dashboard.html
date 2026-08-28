@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Portal — PayPulse AI Payroll</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-logo">P</div>
+        <div class="brand-info">
+          <span class="brand-title">PayPulse AI</span>
+          <span class="brand-badge">Employee Portal</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-category">My Workspace</div>
+        <a href="/employee-dashboard.html" class="nav-link active">
+          <span>📊</span> My Dashboard
+        </a>
+        <a href="/salary-history.html" class="nav-link">
+          <span>📑</span> My Salary Slips
+        </a>
+
+        <div class="nav-category">AI Payroll Helper</div>
+        <a href="/ai-assistant.html" class="nav-link">
+          <span>🤖</span> Ask AI Assistant
+        </a>
+
+        <div class="nav-category">Account</div>
+        <a href="/settings.html" class="nav-link">
+          <span>⚙️</span> Profile Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-snippet">
+          <div class="user-avatar dynamic-user-avatar">JD</div>
+          <div class="user-details">
+            <div class="user-name dynamic-user-name">John Doe</div>
+            <span class="user-role-badge dynamic-user-role">EMPLOYEE</span>
+          </div>
+          <button class="btn btn-icon btn-secondary logout-btn" title="Sign Out">🚪</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-wrapper">
+      <header class="top-navbar">
+        <div class="navbar-left">
+          <button class="toggle-sidebar-btn">☰</button>
+          <div class="page-headline">
+            <h1 class="page-title">Welcome, <span id="emp-name-title">Employee</span></h1>
+            <span class="page-subtitle">Your personal payroll and compensation portal</span>
+          </div>
+        </div>
+        <div class="navbar-right">
+          <a href="/ai-assistant.html" class="btn btn-outline-primary btn-sm">
+            <span>🤖</span> Ask AI About Salary
+          </a>
+        </div>
+      </header>
+
+      <main class="content-body">
+        <!-- Employee Profile Banner -->
+        <div class="card" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(124, 58, 237, 0.08) 100%);">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+                <span id="emp-id-badge" class="badge badge-primary" style="font-family: var(--font-mono); font-size: 0.85rem;">EMP001</span>
+                <span class="badge badge-success">ACTIVE EMPLOYEE</span>
+              </div>
+              <p id="emp-dept-text" style="font-size: 0.95rem; color: var(--text-muted); font-weight: 500;">
+                Engineering • Senior Full Stack Engineer
+              </p>
+            </div>
+            <div>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Latest Payroll Period:</span>
+              <div id="emp-latest-period" style="font-size: 1.1rem; font-weight: 800; color: var(--text-main);">Loading...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Latest Salary Breakdown KPI Cards -->
+        <div class="grid-cards" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          <div class="card stat-card">
+            <div class="stat-icon secondary">💵</div>
+            <div class="stat-details">
+              <span class="stat-label">Gross Earnings</span>
+              <span id="emp-gross-val" class="stat-value">$0.00</span>
+              <span class="stat-trend">Basic + HRA + Allowances + Bonus</span>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-icon danger">📉</div>
+            <div class="stat-details">
+              <span class="stat-label">Total Deductions</span>
+              <span id="emp-deductions-val" class="stat-value">$0.00</span>
+              <span class="stat-trend down">Income Tax + PF + ESI</span>
+            </div>
+          </div>
+
+          <div class="card stat-card">
+            <div class="stat-icon primary">💰</div>
+            <div class="stat-details">
+              <span class="stat-label">Net Take-Home Pay</span>
+              <span id="emp-net-val" class="stat-value">$0.00</span>
+              <span class="stat-trend up">Deposited into verified account</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Latest Salary Slip Quick Actions -->
+        <div class="card" style="margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <h3 class="card-title">Latest Salary Slip Document</h3>
+              <p class="card-desc">View or print your official digitized salary slip</p>
+            </div>
+            <div style="display: flex; gap: 0.75rem;">
+              <a id="emp-view-latest-btn" href="#" class="btn btn-secondary btn-sm">👁️ View Full Slip</a>
+              <a id="emp-pdf-latest-btn" href="#" target="_blank" class="btn btn-primary btn-sm">📥 Download PDF</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Assistant Promo Banner -->
+        <div class="card" style="margin-bottom: 2rem; border-left: 4px solid var(--secondary);">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem;">
+                <span>🤖</span> Have questions about your salary slip?
+              </h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+                Ask our AI Payroll Assistant to explain your net salary calculation, HRA allowances, or tax deductions in simple terms.
+              </p>
+            </div>
+            <a href="/ai-assistant.html" class="btn btn-primary btn-sm">Launch AI Assistant →</a>
+          </div>
+        </div>
+
+        <!-- Salary Slips History Table -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">My Salary Slip History</h3>
+              <p class="card-desc">All past monthly disbursements</p>
+            </div>
+            <a href="/salary-history.html" class="btn btn-secondary btn-sm">View Full History</a>
+          </div>
+
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Slip Number</th>
+                  <th>Month / Year</th>
+                  <th>Gross Salary</th>
+                  <th>Total Deductions</th>
+                  <th>Net Take-Home</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="emp-history-tbody">
+                <tr><td colspan="6" style="text-align: center; padding: 2rem; color: var(--text-muted);">Loading your salary slips...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/dashboard.js"></script>
+</body>
+</html>

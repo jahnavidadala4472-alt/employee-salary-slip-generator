@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Directory — PayPulse AI Payroll</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-logo">P</div>
+        <div class="brand-info">
+          <span class="brand-title">PayPulse AI</span>
+          <span class="brand-badge">Admin Workspace</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-category">Main Menu</div>
+        <a href="/admin-dashboard.html" class="nav-link">
+          <span>📊</span> Dashboard
+        </a>
+        <a href="/employees.html" class="nav-link active">
+          <span>👥</span> Employees
+        </a>
+        <a href="/employee-form.html" class="nav-link">
+          <span>➕</span> Add Employee
+        </a>
+
+        <div class="nav-category">Payroll & Slips</div>
+        <a href="/salary-entry.html" class="nav-link">
+          <span>📝</span> Enter Salary
+        </a>
+        <a href="/salary-history.html" class="nav-link">
+          <span>📑</span> Salary History
+        </a>
+
+        <div class="nav-category">AI Intelligence</div>
+        <a href="/ai-assistant.html" class="nav-link">
+          <span>🤖</span> AI Assistant
+        </a>
+
+        <div class="nav-category">Administration</div>
+        <a href="/company.html" class="nav-link">
+          <span>🏢</span> Company Settings
+        </a>
+        <a href="/settings.html" class="nav-link">
+          <span>⚙️</span> Account Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-snippet">
+          <div class="user-avatar dynamic-user-avatar">AD</div>
+          <div class="user-details">
+            <div class="user-name dynamic-user-name">Administrator</div>
+            <span class="user-role-badge dynamic-user-role">ADMIN</span>
+          </div>
+          <button class="btn btn-icon btn-secondary logout-btn" title="Sign Out">🚪</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+      <header class="top-navbar">
+        <div class="navbar-left">
+          <button class="toggle-sidebar-btn">☰</button>
+          <div class="page-headline">
+            <h1 class="page-title">Employee Directory</h1>
+            <span class="page-subtitle">Manage organization personnel, department rosters, and active payroll eligibility</span>
+          </div>
+        </div>
+        <div class="navbar-right">
+          <a href="/employee-form.html" class="btn btn-primary btn-sm">
+            <span>➕</span> Add New Employee
+          </a>
+        </div>
+      </header>
+
+      <main class="content-body">
+        <!-- Search & Filter Card -->
+        <div class="card" style="margin-bottom: 1.5rem; padding: 1.25rem;">
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+            
+            <div style="flex: 1; min-width: 260px;">
+              <div class="input-icon-wrapper">
+                <span class="input-icon">🔍</span>
+                <input type="text" id="search-input" class="form-control" placeholder="Search by name, employee ID, department, or email...">
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <select id="dept-filter" class="form-control" style="width: auto; min-width: 160px;">
+                <option value="all">All Departments</option>
+              </select>
+
+              <select id="status-filter" class="form-control" style="width: auto; min-width: 130px;">
+                <option value="all">All Statuses</option>
+                <option value="active">Active Only</option>
+                <option value="inactive">Inactive</option>
+              </select>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Employee Table -->
+        <div class="card">
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Employee ID</th>
+                  <th>Full Name</th>
+                  <th>Department</th>
+                  <th>Designation</th>
+                  <th>Phone</th>
+                  <th>Joining Date</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="employees-tbody">
+                <tr><td colspan="8" style="text-align: center; padding: 2.5rem; color: var(--text-muted);">Loading employee directory...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/employees.js"></script>
+</body>
+</html>
