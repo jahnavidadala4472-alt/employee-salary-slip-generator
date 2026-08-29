@@ -1,5 +1,8 @@
 # PayPulse AI — Employee Salary Slip Generator & AI Payroll Assistant
 
+🚀 **Live Demo:** [https://employee-salary-slip-generator.onrender.com](https://employee-salary-slip-generator.onrender.com)
+
+> ⚡ Hosted on Render Free Tier — may take ~30 seconds to wake up on first visit
 
 ## 🌟 Features Overview
 
